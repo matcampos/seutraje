@@ -163,12 +163,16 @@ router.post('/login', function(req, res, next) {
         email: req.body.email,
         password: req.body.password
     }, function(err, result) {
+console.log("err/result",err,result)
         if (result) {
+            console.log("result", result)
             sess.user = result
             res.redirect('/login')
         } else if (err) {
+            console.log("err", err)
             res.status(500).json(err)
         } else if (!result) {
+            console.log("result2", result)
             res.status(404).json(result)
         }
     })
@@ -193,11 +197,11 @@ router.get('/confirma/:id', function(req, res, next) {
         } else if (result) {
             result.confirmedEmail = true;
             result.save(function(err, savedResult) {
-              res.render('confirma', {
-                  title: 'Seu Traje - confirma',
-                  user: (req.session && req.session.user ? req.session.user : null),
-                  reservations: result
-              });
+                res.render('confirma', {
+                    title: 'Seu Traje - confirma',
+                    user: (req.session && req.session.user ? req.session.user : null),
+                    reservations: result
+                });
             })
         }
     })
