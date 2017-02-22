@@ -229,7 +229,7 @@ router.post('/cadastro', function(req, res, next) {
             from_email = new helper.Email("seutraje@gmail.com");
             to_email = new helper.Email(result.email);
             subject = "Seu traje - Novo Cadastro";
-            content = new helper.Content('text/html', "<h3>Olá," + result.name + "</h3><br> você foi cadastrado no <strong>Seu traje</strong>, para verificar o seu email, clique no botão abixo<br><br><br><a href='http://localhost:3000/confirma/'" + result._id + "'>confirmar</a>");
+            content = new helper.Content('text/html', "<h3>Olá," + result.name + "</h3><br> você foi cadastrado no <strong>Seu traje</strong>, para verificar o seu email, clique no botão abixo<br><br><br><a href='http://138.197.115.28/confirma/'" + result._id + "'>confirmar</a>");
             mail = new helper.Mail(from_email, subject, to_email, content);
 
             var sg = require('sendgrid')(token);
