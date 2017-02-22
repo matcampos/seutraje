@@ -301,7 +301,7 @@ router.post('/reserva', function(req, res, next) {
             to_email_admin = new helper.Email("seutraje@gmail.com");
             subject_admin = "Seu traje - Nova Reserva de" + req.session.user.name;
             content_admin = new helper.Content('text/html', "Nova reserva efetuada por <strong> [" + req.session.user.name + "]" + req.session.user.email + "</strong></h3><br/><h3>Traje:" + result.name + "</h3>" + "<br/><h3>Tamanho:" + result.size + "</h3>" + "<br/><h3>Preço:" + result.price + "</h3>");
-            mail_admin = new helper.Mail(from_email_admin, subject_admin, to_emai_adminl, content_admin);
+            mail_admin = new helper.Mail(from_email_admin, subject_admin, to_email_admin, content_admin);
 
             var sg = require('sendgrid')(token);
             var request = sg.emptyRequest({
