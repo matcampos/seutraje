@@ -1,0 +1,118 @@
+<% include header %>
+
+<section id="main-slider" >
+
+
+    <div class="center wow fadeInDown">
+
+                <div class="center wow fadeInDown">
+            <div class="row">
+
+    <section id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 wow fadeInDown">
+                   <div class="tab-wrap">
+                        <div class="media">
+                            <div class="parrent pull-left">
+                                <ul class="nav nav-tabs nav-stacked">
+                                    <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Traje Cinema</a></li>
+                                    <li class="active"><a href="#tab2" data-toggle="tab" class="analistic-02">Escolha do tamanho</a></li>
+                                    <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Reserva do traje</a></li>
+
+                                </ul>
+                            </div>
+
+                            <div class="parrent media-body">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade" id="tab1">
+                                        <div class="media">
+                                            <h2>Terno Cinema</h2>
+                                                <img class="img-responsive" src="/images/homemm1.jpg"><br>
+                                            <div class="media-body">
+
+                                                 <p>O Terno Cinema foi feito pelo melhor alfaiate da cidade, possui um corte impecável e ainda é a prova de bala. O Terno Cinema está disponivel apenas na cor cinza escuro.<br> Tamanhos: 42, 44 e 46<br> <h6>De: <del>R$ 520,80</del></h6><strong> Por: R$ 475,97 </strong><h6> C/ desconto Seu Traje </h6></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                     <div class="tab-pane fade active in" id="tab2">
+                                        <div class="media">
+                                           <div class="pull-left">
+                                                <img class="img-responsive" src="/images/homem1.png">
+                                            </div>
+                                        <div class="media-body">
+
+                                        <h2>Escolha o tamanho: </h2>
+                                        <label for="42">
+                                              <input id="42" type="radio" name="size" value="42"> 42<br>
+                                        </label><br>
+
+                                        <label id="44">
+                                  <input type="radio" name="size" value="44"> 44<br>
+                                        </label><br>
+
+                                         <label id="46">
+                                          <input type="radio" name="size" value="46"> 46
+                                         </label>
+
+                                        </div>
+
+                                        </div>
+                                     </div>
+
+                                     <div class="tab-pane fade" id="tab3">
+
+                                        <p>Você está solicitando a reserva do traje Terno Cinema. Para finalizar a reserva você deve se cadastrar, se já estiver "logado", finalize agora sua solicitação. Lembrando que não é possivel solicitar a reserva sem estar no seu login.</p>
+
+                                     <h4><a id="ajax_form">Solicitar Reserva</a></h4>
+
+                                     <br/>
+                                     <br/><br/>
+                                     <div id="message">
+                                     </div>
+
+                                     </div>
+
+                                </div> <!--/.tab-content-->
+                            </div> <!--/.media-body-->
+                        </div> <!--/.media-->
+                    </div><!--/.tab-wrap-->
+                </div><!--/.col-sm-6-->
+
+
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#content-->
+
+                </div>
+                </div>
+
+            </div>
+    </section><!--/#main-->
+
+    <script type="text/javascript">
+        $('#ajax_form').click(function() {
+            var dados = {
+                size: $('input[name=size]:checked').val(),
+                price:'R$ 475,97',
+                name: 'Traje Cinema',
+                id:1,
+                image:'/images/homem1.png'
+            }
+
+            jQuery.ajax({
+                type: "POST",
+                url: "/reserva",
+                data: dados,
+                success: function(data) {
+                    var message = "Traje reserado com sucesso!</br>Verifique o seu e-mail"
+                    $('#message').append('<h3 style="text-align:center;font-size:28px!Important">' + message + '</h3>')
+
+                }
+            });
+
+            return false;
+        });
+    </script>
+        <% include footer %>

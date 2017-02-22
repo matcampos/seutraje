@@ -1,0 +1,83 @@
+<% include header %>
+
+    <section id="about-us">
+        <div class="container">
+
+            <div id="message">
+            </div>
+            <div class="center wow fadeInDown">
+                <h2>Cadastro</h2>
+                <p class="lead">Cadastre-se para efetuar uma reserva do traje que você gostou. <br>O Seu Traje também facilita sua vida ao efetuar a reerva sem que você precise ir a loja.</p>
+            </div>
+            <div class="form-group">
+                <label>Nome </label>
+                <input id="name" type="text" name="name" class="form-control" required="required">
+            </div>
+            <div class="form-group">
+                <label>Email </label>
+                <input id="email" type="email" name="email" class="form-control" required="required">
+            </div>
+            <div class="form-group">
+                <label>senha </label>
+                <input id="password" type="password" name="password" class="form-control" required="required">
+            </div>
+            <div class="form-group">
+                <label>celular</label>
+                <input id="cellphone" type="text" name="cellphone" class="form-control" required="required">
+            </div>
+            <div class="form-group">
+                <label>Genêro</label>
+                <select id="sex">
+                    <option value="Male">Masculino</option>
+                    <option value="Female" selected>Feminino</option>
+                  </select>
+            </div>
+
+                <div class="form-group">
+                    <button id="ajax_form" type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!--/.row-->
+        </div>
+        <!--section-->
+        </div>
+        <!--/.container-->
+    </section>
+    <!--/about-us-->
+
+
+    <script type="text/javascript">
+        $('#ajax_form').click(function() {
+            var dados = {
+                name: $("#name").val(),
+                email: $("#email").val(),
+                sex: $("#sex option:selected").val(),
+                password: $("#password").val(),
+                  cellphone: $("#cellphone").val()
+            }
+
+            jQuery.ajax({
+                type: "POST",
+                url: "/cadastro",
+                data: dados,
+                success: function(data) {
+                    var message = "Usuário cadastrado com sucesso!"
+                    $('#message').append('<h3 style="text-align:center;font-size:28px!Important">' + message + '</h3>')
+
+
+                    //clear
+                    $("#name").val('');
+                    $("#email").val('');
+                    $("#sex option:selected").val('');
+                    $("#password").val('');
+                    $("#cellphone").val('');
+                }
+            });
+
+            return false;
+        });
+    </script>
+
+    <% include footer %>

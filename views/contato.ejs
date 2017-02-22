@@ -1,0 +1,104 @@
+<% include header %>
+
+    <section id="contact-info">
+        <div class="center">
+            <h2>Fale conosco</h2>
+            <p class="lead">Estaremos de ouvidos atentos para sua necessidade.</p>
+        </div>
+        <div class="gmap-area">
+
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 text-center">
+                        <div class="gmap">
+                            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.617853692214!2d-46.76868898447591!3d-23.546243266920627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ceff42ad625067%3A0x2d7cf57f2c5e9b62!2sR.+Dr.+Mario+Milani+-+Vila+Yara%2C+Osasco+-+SP%2C+06028-250!5e0!3m2!1spt-BR!2sbr!4v1486488593608"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-7 map-content">
+                        <ul class="row">
+                            <li class="col-sm-6">
+                                <address>
+                                   <h5>Unidade Osasco - Centro</h5>
+                                   <p>Rua Dr. Mario Milani, s/n <br>
+                                   Vila Yara, 06028-250</p>
+                                   <p>Telefone:1234-5678 <br>
+                                   Endereço de E-mail: seutraje@gmail.com</p>
+                               </address>
+
+
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/gmap_area -->
+
+    <section id="contact-page">
+        <div class="container">
+            <div class="center">
+                <h2>Deixe sua mensagem</h2>
+                <p class="lead">Mande para nós a sua opiniao sobre o site. Será de suma importância saber no que podemos melhorar.</p>
+            </div>
+
+            <div id="message">
+            </div>
+            <div class="row contact-wrap">
+                <div class="status alert alert-success" style="display: none"></div>
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            <label>Nome </label>
+                            <input type="text" name="name" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Email </label>
+                            <input type="email" name="email" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Telefone</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Celular</label>
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label>Assunto *</label>
+                            <input type="text" name="subject" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Mensagem *</label>
+                            <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Enviar Mensagem</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </section>
+    <!--/#contact-page-->
+
+    <!--
+ IMPORTANT: To Include this File
+
+  Click 'Menu' button at the top and select 'Copy Link'
+-->
+
+
+    <!--/#bottom-->
+
+
+    <% include footer %>
