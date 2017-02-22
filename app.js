@@ -9,8 +9,8 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var session = require('express-session');
 var app = express();
-
-
+var cors = require('cors')
+app.use(cors());
 // Connect to mongodb
 require('./config/db.js').connect();
 
