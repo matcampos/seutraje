@@ -217,7 +217,7 @@ router.post('/cadastro', function(req, res, next) {
     model.sex = req.body.sex
     model.password = req.body.password
     model.save(function(err, result) {
-        if (ereq.session.userrr) {
+        if (req.session.user) {
             console.log(err)
             res.status(500).json(err)
         } else if (result) {
