@@ -209,6 +209,7 @@ router.get('/confirma/:id', function(req, res, next) {
 
 router.post('/cadastro', function(req, res, next) {
     console.log(req.body)
+
     var model = new ModelUser()
     model.name = req.body.name
     model.email = req.body.email
@@ -216,6 +217,7 @@ router.post('/cadastro', function(req, res, next) {
     model.cellphone = req.body.cellphone
     model.sex = req.body.sex
     model.password = req.body.password
+    console.log("chegay")
     model.save(function(err, result) {
         if (req.session.user) {
             console.log(err)
