@@ -22,7 +22,7 @@
     "ejs": "~2.5.2",
     "express": "~4.14.0",
     "express-session": "^1.15.0",
-    "mongoose": "^4.8.1",
+    "mongoose": "^4.8.4",
     "morgan": "~1.7.0",
     "node-session": "^1.2.1",
     "open": "0.0.5",
