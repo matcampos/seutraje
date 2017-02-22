@@ -1,11 +1,11 @@
 {
   "name": "seu-traje",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "nodemon bin/www",
     "startDevelopment": "NODE_PATH=. NODE_CONFIG_DIR=./config nodemon bin/www",
-    "startStaging": "NODE_PATH=. NODE_CONFIG_DIR=./config pm2 start bin/www -i 2",
+    "startStaging": "NODE_PATH=. NODE_CONFIG_DIR=./config pm2 start bin/www",
     "preinstallDevelopment": "rm -rf node_modules",
     "installDevelopment": "npm install",
     "postinstallDevelopment": "npm install -g nodemon",
