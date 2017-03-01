@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var ModelUser = require('models/user');
 var ModelReservation = require('models/reservation');
-const token = "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"
+const token = "token"
 var sess;
 
 
